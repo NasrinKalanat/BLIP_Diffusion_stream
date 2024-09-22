@@ -140,7 +140,7 @@ for i, (id,url,lbl) in enumerate(zip(imgs.image_id,imgs.url,imgs.weather_label))
   count=0
   while True:
       try:
-        download_image(url,os.path.join(images_path, f"id_{id}_lbl_{lbl}.png"))
+        download_image(url, images_path, f"id_{id}_lbl_{lbl}.png")
         # self.imgs.ix[i,"image_path"]=cur_path+fol+"/images/"+ str(id)+".jpg"
 #         download_image2(url,cur_path+fol+"/images/"+ str(id)+".npy")
 #         self.imgs.loc[:,"image_path"].iloc[i]=cur_path+fol+"/images/"+ str(id)+".npy"
