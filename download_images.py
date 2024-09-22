@@ -18,24 +18,25 @@ import time
 
 def download_image(url, file_path, file_name=""):
     # download from image url and import it as a numpy array
-    full_path = file_path + file_name
+    full_path = os.path.join(file_path, file_name)
     res = requests.get(url, stream=True) # get full image
     if res.status_code == 200:
       img=res.raw
       img = Image.open(img)
       img = img.resize((360,360))
       # img = ImageOps.grayscale(img) # grayscale
-      img = img.tobytes() # convert to bytes
-      img = bytearray(img) # create byte array
-      img = np.asarray(img, dtype="uint8") # 360x360 array
-      img = img.reshape(360, 360, 3)
-      np.save(full_path,img)
+      # img = img.tobytes() # convert to bytes
+      # img = bytearray(img) # create byte array
+      # img = np.asarray(img, dtype="uint8") # 360x360 array
+      # img = img.reshape(360, 360, 3)
+      # np.save(full_path,img)
 
       # with open(full_path, 'rb') as f:
       #   img = np.load(full_path)
       #   img=img.astype('float32') / 255
       # fig,ax = plt.subplots(1)
       # ax.imshow(img)
+      img.save(full_path)
 
     else:
       print('Image Couldn\'t be retrieved '+ res.status_code)
