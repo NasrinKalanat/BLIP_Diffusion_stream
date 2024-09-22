@@ -41,7 +41,7 @@ def download_image(url, file_path, file_name=""):
       print('Image Couldn\'t be retrieved '+ res.status_code)
     return img
 
-def half_up_minute(self, x):
+def half_up_minute(x):
     delta = timedelta(minutes=15)
     ref_time = datetime(1970,1,1, tzinfo=x.tzinfo)
     return ref_time + round((x - ref_time) / delta) * delta
