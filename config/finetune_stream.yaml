@@ -37,7 +37,7 @@ run:
   runner: runner_iter
 
   max_iters: 40
-  # iters_per_inner_epoch: 20
+  iters_per_inner_epoch: 20
 
   task: text-to-image-generation
   # optimizer
