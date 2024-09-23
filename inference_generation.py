@@ -1,9 +1,6 @@
 import torch
 from torchvision.utils import save_image
-
-from PIL import Image
 from lavis.models import load_model_and_preprocess
-import matplotlib.pyplot as plt
 import argparse
 
 parser = argparse.ArgumentParser(
@@ -50,5 +47,5 @@ for i in range(num_output):
         width=512,
     )
 
-    save_image(output[0], f'generated_{cond_subject}_{tgt_subject}_{i}.png')
+    output[0].save(f'generated_{cond_subject}_{tgt_subject}_{i}.png')
 
