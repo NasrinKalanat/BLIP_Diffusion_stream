@@ -20,6 +20,7 @@ all_files = glob.glob("images/*.png")
 
 prompts = []
 for file in all_files:
+    file = file.rstrip(".png")
     _, idx, _, text_prompt = file.split("_")
     cond_subject = "scene"
     tgt_subject = "scene"
