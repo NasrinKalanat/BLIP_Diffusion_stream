@@ -54,7 +54,7 @@ run:
 
   seed: 42
   # output_dir: "output/BLIP-diffusion/finetune"
-  output_dir: "/data/nak168/spatial_temporal/stream_img/BLIP_diffusion_stream/output"
+  output_dir: "/data/nak168/spatial_temporal/stream_img/BLIP_Diffusion_stream/output"
 
   amp: True
   # amp: False
