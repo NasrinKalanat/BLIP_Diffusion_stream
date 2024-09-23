@@ -54,7 +54,7 @@ run:
 
   seed: 42
   # output_dir: "output/BLIP-Diffusion/finetune"
-  output_dir: "/data/nak168/spatial_temporal/stream_img/BLIP_Diffusion_stream/output"
+  output_dir: "/data/nak168/spatial_temporal/stream_img/BLIP_Diffusion_stream/output/checkpoint_40.pth"
 
   amp: True
   # amp: False
