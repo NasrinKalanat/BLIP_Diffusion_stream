@@ -42,9 +42,9 @@ run:
   task: text-to-image-generation
   # optimizer
   lr_sched: "constant_lr"
-  # init_lr: 5e-6
+  init_lr: 5e-6
   min_lr: 0
-  # weight_decay: 0.01
+  weight_decay: 0.01
 
   # batch_size_train: 2
   # batch_size_train: 16
@@ -54,7 +54,6 @@ run:
 
   seed: 42
   # output_dir: "output/BLIP-diffusion/finetune"
-  # output_dir: "output/debug/BLIP-diffusion/finetune"
   output_dir: "/data/nak168/spatial_temporal/stream_img/BLIP_diffusion_stream/output"
 
   amp: True
