@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('ckpt_path', default=None)
 args = parser.parse_args()
 
-model, vis_preprocess, txt_preprocess = load_model_and_preprocess("blip_diffusion", "base", device="cuda", is_eval=True)
+model, vis_preprocess, txt_preprocess = load_model_and_preprocess("blip_diffusion", "base", device="cuda:1", is_eval=True)
 finetuned_ckpt = args.ckpt_path
 
 model.load_checkpoint(finetuned_ckpt)
