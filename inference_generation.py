@@ -37,7 +37,7 @@ for file in all_files:
         "prompt": text_prompt,
     }
 
-    num_output = 4
+    num_output = 1
 
     iter_seed = 8888
     guidance_scale = 7.5
