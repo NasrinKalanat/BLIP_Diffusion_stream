@@ -21,10 +21,9 @@ all_files = glob.glob("images/*.png")
 prompts = []
 for file in all_files:
     file = file.rstrip(".png")
-    _, idx, _, prompt = file.split("_")
+    _, idx, _, text_prompt = file.split("_")
     cond_subject = "scene"
     tgt_subject = "scene"
-    text_prompt = prompt[0]
     print(text_prompt)
 
     cond_subjects = [txt_preprocess["eval"](cond_subject)]
