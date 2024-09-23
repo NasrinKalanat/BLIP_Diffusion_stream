@@ -22,7 +22,6 @@ prompts = []
 for file in all_files:
     file = file.rstrip(".png")
     _, idx, _, text_prompt = file.split("_")
-    text_prompt = text_prompt.strip("[]'")
     cond_subject = "scene"
     tgt_subject = "scene"
     print(text_prompt)
