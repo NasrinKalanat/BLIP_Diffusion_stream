@@ -24,8 +24,8 @@ for file in all_files:
     _, idx, _, prompt = file.split("_")
     cond_subject = "scene"
     tgt_subject = "scene"
-    print(text_prompt)
     text_prompt = prompt[0]
+    print(text_prompt)
 
     cond_subjects = [txt_preprocess["eval"](cond_subject)]
     tgt_subjects = [txt_preprocess["eval"](tgt_subject)]
