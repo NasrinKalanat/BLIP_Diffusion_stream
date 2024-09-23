@@ -53,7 +53,7 @@ run:
   num_workers: 4
 
   seed: 42
-  # output_dir: "output/BLIP-diffusion/finetune"
+  # output_dir: "output/BLIP-Diffusion/finetune"
   output_dir: "/data/nak168/spatial_temporal/stream_img/BLIP_Diffusion_stream/output"
 
   amp: True
