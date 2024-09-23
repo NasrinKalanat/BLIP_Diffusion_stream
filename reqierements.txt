@@ -1,1 +1,4 @@
-salesforce-lavis
+https://github.com/salesforce/LAVIS.git
+scikit-learn
+h5py
+openpyxl
