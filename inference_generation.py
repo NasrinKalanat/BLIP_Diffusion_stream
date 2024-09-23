@@ -23,6 +23,7 @@ for file in all_files:
     _, idx, _, text_prompt = file.split("_")
     cond_subject = "scene"
     tgt_subject = "scene"
+    print(text_prompt)
     # text_prompt = "snowy"
 
     cond_subjects = [txt_preprocess["eval"](cond_subject)]
