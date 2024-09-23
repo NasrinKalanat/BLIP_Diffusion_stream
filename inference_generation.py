@@ -4,6 +4,7 @@ from torchvision.utils import save_image
 from PIL import Image
 from lavis.models import load_model_and_preprocess
 import matplotlib.pyplot as plt
+import argparse
 
 parser = argparse.ArgumentParser(
                     prog='BLIP-Diffusion')
