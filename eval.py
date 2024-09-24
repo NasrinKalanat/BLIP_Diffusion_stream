@@ -16,9 +16,10 @@ from transformers import CLIPProcessor, CLIPModel
 from torchmetrics import FID
 
 class ThirdStageModel(nn.Module):
-    def __init__(self, ckptdir=""):
+    def __init__(self, ckptdir="", device="cuda"):
         super(ThirdStageModel, self).__init__()
 
+        self.device = device
         self.wlabels = ["Sunny/Clear", "Cloudy/Overcast", "Rainy", "Snowy", "Foggy/Misty", "Windy", "Stormy/Severe",
                         "Hot/Heatwave", "Cold/Cold Wave", "Mixed/Variable"]
         self.num_classes = len(self.wlabels)

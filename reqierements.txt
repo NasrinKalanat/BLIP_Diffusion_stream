@@ -1,4 +1,4 @@
 scikit-learn
 h5py
 openpyxl
-torchmetrics
+torchmetrics==0.6
