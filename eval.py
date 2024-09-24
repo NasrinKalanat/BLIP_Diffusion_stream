@@ -174,7 +174,6 @@ class ThirdStageModel(nn.Module):
         # refine = Refinement(x.shape[1:], self.device).to(self.device)
         # self.load_checkpoint(self.model)
         with torch.no_grad():
-            self.on_val_start()
             for batch_idx, batch in enumerate(loader):
                 images, decoded_images, wlabels = batch
                 images = images.to(self.device)
