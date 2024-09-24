@@ -16,7 +16,8 @@ class DatasetEval(object):
         self.labels = {}
         self.ids = []
         for file in glob.glob(f"{imgs_gt_path}/*.png"):
-            _, idx, _, lbl = file.split("_")
+            print(file)
+            _, idx, _, lbl = file.split(".png")[0].split("_")
             self.imgs_gt[idx]=file
             self.labels[idx]=lbl
             self.ids.append(idx)
