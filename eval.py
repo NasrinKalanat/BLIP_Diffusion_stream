@@ -178,7 +178,7 @@ class ThirdStageModel(nn.Module):
                 images, decoded_images, wlabels = batch
                 images = images.to(self.device)
                 decoded_images = decoded_images.to(self.device)
-                wlabels = wlabels.to(self.device)
+                # wlabels = wlabels.to(self.device)
 
                 fid = FID().cuda(device=self.device)
                 fid.update(((images.clamp(-1., 1.) + 1.0) / 2.0 * 255).type(torch.uint8).cuda(device=self.device),
@@ -200,22 +200,22 @@ class ThirdStageModel(nn.Module):
 
                 total_acc_clip += (torch.argmax(decoded_images_clip.logits_per_image, dim=1) == torch.argmax(
                     images_clip.logits_per_image, dim=1)).float().mean()
-                # total_acc_clip+=(((decoded_images_clip.logits_per_image>0.8).int() * wlabels.int()).sum(dim=1)/wlabels.int().sum(dim=1)).mean()
-                # total_acc_clip+=self.f1_score(decoded_images_clip.logits_per_image, torch.sigmoid(images_clip.logits_per_image, dim=1))
-                resnet_out = self.resnet(decoded_images)
-                pred_wlabels = self.fc_w(resnet_out)
-                # total_acc+=(((pred_wlabels>0.8).int() * wlabels.int()).sum(dim=1)/wlabels.int().sum(dim=1)).mean()
-                # total_acc+=(torch.argmax(pred_wlabels, dim=1)==torch.argmax(wlabels, dim=1)).float().mean()
-                total_acc += self.f1_score(pred_wlabels, wlabels)
+                # # total_acc_clip+=(((decoded_images_clip.logits_per_image>0.8).int() * wlabels.int()).sum(dim=1)/wlabels.int().sum(dim=1)).mean()
+                # # total_acc_clip+=self.f1_score(decoded_images_clip.logits_per_image, torch.sigmoid(images_clip.logits_per_image, dim=1))
+                # resnet_out = self.resnet(decoded_images)
+                # pred_wlabels = self.fc_w(resnet_out)
+                # # total_acc+=(((pred_wlabels>0.8).int() * wlabels.int()).sum(dim=1)/wlabels.int().sum(dim=1)).mean()
+                # # total_acc+=(torch.argmax(pred_wlabels, dim=1)==torch.argmax(wlabels, dim=1)).float().mean()
+                # total_acc += self.f1_score(pred_wlabels, wlabels)
 
-                pred_flabels = self.fc_f(resnet_out)
-                flabel_error += self.compute_mse_loss(pred_flabels, flabels)
+                # pred_flabels = self.fc_f(resnet_out)
+                # flabel_error += self.compute_mse_loss(pred_flabels, flabels)
 
             total_fid = fid.compute()
 
-        print(f'Total test w label accuracy: {total_acc / len(loader)}')
+        # print(f'Total test w label accuracy: {total_acc / len(loader)}')
         print(f'Total test clip accuracy: {total_acc_clip / len(loader)}')
-        print(f'Total test accuracy: {flabel_error.item() / len(loader)}')
+        # print(f'Total test accuracy: {flabel_error.item() / len(loader)}')
         print(f'Total test FID: {total_fid / len(loader)}')
         return
 
