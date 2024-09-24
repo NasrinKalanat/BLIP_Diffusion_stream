@@ -23,7 +23,7 @@ class DatasetEval(object):
             self.ids.append(idx)
         for file in glob.glob(f"{imgs_gen_path}/*.png"):
             file = os.path.basename(file)
-            _, idx, _, _ = file.split(".png")[0].split("_")
+            _, idx, _, _, _ = file.split(".png")[0].split("_")
             self.imgs_gen[idx]=file
 
     def __getitem__(self, id):
