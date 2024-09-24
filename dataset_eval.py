@@ -16,13 +16,14 @@ class DatasetEval(object):
         self.labels = {}
         self.ids = []
         for file in glob.glob(f"{imgs_gt_path}/*.png"):
-            print(file)
+            file = os.path.basename(file)
             _, idx, _, lbl = file.split(".png")[0].split("_")
             self.imgs_gt[idx]=file
             self.labels[idx]=lbl
             self.ids.append(idx)
         for file in glob.glob(f"{imgs_gen_path}/*.png"):
-            _, idx, _, _ = file.split("_")
+            file = os.path.basename(file)
+            _, idx, _, _ = file.split(".png")[0].split("_")
             self.imgs_gen[idx]=file
 
     def __getitem__(self, id):
