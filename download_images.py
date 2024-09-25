@@ -132,7 +132,10 @@ def load_data(path, path_weather, fol, phase="train"):
 
 # download images (do just for first time)
 images_path = "images"
-imgs = load_data(path= "/data/nak168/spatial_temporal/stream_img/data/fpe-westbrook/", path_weather= "/data/nak168/spatial_temporal/stream_img/data/", fol= "Sanderson Brook_01171010")
+imgs = load_data(path= "/data/nak168/spatial_temporal/stream_img/data/fpe-westbrook/", path_weather= "/data/nak168/spatial_temporal/stream_img/data/", fol= "Avery Brook_River Left_01171000")
+# Avery Brook_River Left_01171000 , Avery Brook_River Right_01171000 , Avery Brook_Side_01171000 , Obear Brook Lower_01171070
+# Sanderson Brook_01171010 , West Brook Lower_01171090 , West Brook Reservoir_01171020 , West Brook Upper_01171030 ,
+
 if not os.path.exists(images_path):
   os.mkdir(images_path)
 delay=0.001
