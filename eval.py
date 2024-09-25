@@ -173,6 +173,7 @@ class ThirdStageModel(nn.Module):
         flabel_error = 0
         # refine = Refinement(x.shape[1:], self.device).to(self.device)
         # self.load_checkpoint(self.model)
+        fid = FID().cuda(device=self.device)
         with torch.no_grad():
             for batch_idx, batch in enumerate(loader):
                 images, decoded_images, wlabels = batch
@@ -180,7 +181,6 @@ class ThirdStageModel(nn.Module):
                 decoded_images = decoded_images.to(self.device)
                 # wlabels = wlabels.to(self.device)
 
-                fid = FID().cuda(device=self.device)
                 fid.update(((images.clamp(-1., 1.) + 1.0) / 2.0 * 255).type(torch.uint8).cuda(device=self.device),
                            real=True)
                 fid.update(((decoded_images.clamp(-1., 1.) + 1.0) / 2.0 * 255).type(torch.uint8).cuda(device=self.device),
