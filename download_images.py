@@ -132,7 +132,7 @@ def load_data(path, path_weather, fol, phase="train"):
 
 # download images (do just for first time)
 images_path = "images"
-imgs = load_data(path= "/data/nak168/spatial_temporal/stream_img/data/fpe-westbrook/", path_weather= "/data/nak168/spatial_temporal/stream_img/data/", fol= "Obear Brook Lower_01171070")
+imgs = load_data(path= "/data/nak168/spatial_temporal/stream_img/data/fpe-westbrook/", path_weather= "/data/nak168/spatial_temporal/stream_img/data/", fol= "West Brook Reservoir_01171020")
 if not os.path.exists(images_path):
   os.mkdir(images_path)
 delay=0.001
